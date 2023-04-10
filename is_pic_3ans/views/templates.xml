@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+          <template id="is_pic_3ans.playground" name="PIC 3 ans">
+            <html>
+                <body>
+                </body>
+            </html>
+          </template>
+    </data>
+</odoo>

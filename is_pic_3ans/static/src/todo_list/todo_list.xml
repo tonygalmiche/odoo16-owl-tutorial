@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.TodoList" owl="1">
+        <div class="bg-white border border-primary rounded mt-3 p-3">
+
+            <input class="form-control mb-3" type="text" placeholder="Filtre" t-on-keyup="filtrePartners" t-ref="filtrePartnersRef"/>
+
+            <input class="form-control mb-3" type="text" placeholder="Add a todo" t-on-keyup="addTodo" t-ref="todoListInput"/>
+            <t t-foreach="todoList" t-as="todo" t-key="todo.id">
+                <!-- <Todo id="todo.id" description="todo.description" done="todo.done"/> -->
+                <Todo id="todo.id" description="todo.description" done="todo.done" toggleState.bind="toggleTodo" removeTodo.bind="removeTodo"/>
+            </t>
+            <span role="button" class="fa fa-remove ms-3 text-danger" t-on-click="onRemoveAll">Supprimer tout</span>
+
+        </div>
+    </t>
+</templates>

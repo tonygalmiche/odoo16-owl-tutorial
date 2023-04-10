@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.Todo" owl="1">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" t-att-id="props.id" t-att-checked="props.done" t-on-click="onClick"/>
+            <label class="form-check-label" t-att-for="props.id" t-att-class="props.done ? 'text-decoration-line-through text-muted' : '' ">
+                <t t-esc="props.id"/>.
+                <t t-esc="props.description"/>
+            </label> - 
+
+            <a role="button" t-esc="props.description" class="btn btn-link" t-on-click="ViewPartner"/>
+
+
+            <span role="button" class="fa fa-remove ms-3 text-danger" t-on-click="onRemove"/>
+        </div>
+    </t>
+</templates>
+
+
+<!-- In order to validate this invoice, you must <button class="oe_link" type="object" name="action_activate_currency" style="padding: 0; vertical-align: baseline;">activate the currency of the invoice</button>. The journal entries need to be computed by Odoo before being posted in your company's currency. -->
+<!-- 
+<a t-att-title="line.date"
+role="button"
+class="oe_form_field btn btn-link open_account_move"
+t-att-move-id="line.move_id"
+style="margin-right: 5px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding-left: 0px; width:100%; text-align:left;"
+data-bs-toggle="tooltip"
+t-att-payment-id="account_payment_id"
+t-esc="line.journal_name"/> -->
