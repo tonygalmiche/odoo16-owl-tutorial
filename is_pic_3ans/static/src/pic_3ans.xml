@@ -15,28 +15,22 @@
         <Layout display="display">
             <t t-set-slot="control-panel-bottom-left">
                 <div class="d-flex flex-row">
-                    <button class="btn btn-primary"      style="width:150px" t-on-click="openCustomerView"> Customers </button>
-                    <button class="btn btn-primary ms-1" style="width:150px" t-on-click="openLast7DaysOrders"> New Orders </button>
-                    <button class="btn btn-primary ms-1" style="width:150px" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>        
-
-                    <input type="text" class="form-control ms-1" placeholder="First name" style="width:150px" t-on-keyup="OKkey" id="input1"/>
-                    <input type="text" class="form-control ms-1" placeholder="Last name"  style="width:150px" t-on-keyup="OKkey" id="input2"/>
-                    <input type="text" class="form-control ms-1" placeholder="Age"        style="width:75px"  t-on-keyup="OKkey" id="input3"/>
-
-                    <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OK"> OK </button>
-
+                    <input name="pic3ans_soc"           t-att-value="state.pic3ans_soc"           placeholder="Soc"            style="width:50px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_client"        t-att-value="state.pic3ans_client"        placeholder="Client Article" style="width:100px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_fournisseur"   t-att-value="state.pic3ans_fournisseur"   placeholder="Code Fourn"     style="width:100px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_codepg"        t-att-value="state.pic3ans_codepg"        placeholder="CodePG(Début)"  style="width:150px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_cat"           t-att-value="state.pic3ans_cat"           placeholder="Cat"            style="width:50px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_gest"          t-att-value="state.pic3ans_gest"          placeholder="Gest"           style="width:50px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_moule"         t-att-value="state.pic3ans_moule"         placeholder="Moule(Début)"   style="width:120px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_annee_realise" t-att-value="state.pic3ans_annee_realise" placeholder="Année Réalisé"  style="width:100px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="pic3ans_annee_prev"    t-att-value="state.pic3ans_annee_prev"    placeholder="Année Prev."    style="width:100px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OKclick"> OK </button>
                 </div>
-
-
             </t>
             <div class="row pic3ans">
-                <div class="col-3">
-                    <TodoList/>
-                </div>
-                <div class="col-1"/>
-                <div class="col-3">
-                    <TodoList/>
-                </div>
+                <div t-esc="state.input1"/>
+                <div t-esc="state.input2"/>
+                <div t-esc="state.input3"/> 
             </div>
         </Layout>
     </t>

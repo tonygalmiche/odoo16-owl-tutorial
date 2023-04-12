@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.test_owl_01_template" owl="1">
+        <style>
+            .pic3mois {
+                border-bottom: 1px solid #dee2e6;
+                padding-top: 0.5rem;
+                padding-right: 16px;
+                padding-bottom: 0.5rem;
+                padding-left: 16px;
+                background-color: #f2f3f4;
+              }
+    
+        </style>
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <div class="d-flex flex-row">
+                    <input 
+                        t-att-value="state.input1" 
+                        type="text" 
+                        class="form-control ms-2" 
+                        placeholder="First name" 
+                        style="width:150px" 
+                        t-on-keyup="OKkey" 
+                        t-on-change="onChangeInput"
+                        name="input1"
+                    />
+                    <input 
+                        t-att-value="state.input2" 
+                        type="text" 
+                        class="form-control ms-2" 
+                        placeholder="Last name" 
+                        style="width:150px" 
+                        t-on-keyup="OKkey" 
+                        t-on-change="onChangeInput"
+                        name="input2"
+                    />
+                    <input 
+                        t-att-value="state.input3" 
+                        type="text" 
+                        class="form-control ms-2" 
+                        placeholder="Age" 
+                        style="width:150px" 
+                        t-on-keyup="OKkey" 
+                        t-on-change="onChangeInput"
+                        name="input3"
+                    />
+
+                    <!-- cf addons/web/static/src/core/ pour la liste des components disponilbes -->
+                    <CheckBox value="state.checkbox1" onChange.bind="onChangeCheckbox1"  className="'ms-2'">
+                        CheckBox 1
+                    </CheckBox>
+                    <CheckBox value="state.checkbox2" onChange.bind="onChangeCheckbox2"  className="'ms-2'">
+                        CheckBox 2
+                    </CheckBox>
+                    <DatePicker
+                        date="state.date"
+                        onDateTimeChanged="(date) => this.onChangeDate(date)"
+                    />
+                    <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OKclick"> OK </button>
+                </div>
+            </t>
+            <div class="row pic3mois" t-ref="rootRef">
+                <div t-esc="state.input1"/>
+                <div t-esc="state.input2"/>
+                <div t-esc="state.input3"/> 
+                <div t-esc="state.html"/> 
+                <div t-raw="state.html"/> 
+
+                <h1>Test ORM</h1>
+                <t t-foreach="state.partners" t-as="partner" t-key="partner.id">
+                    <a 
+                        role="button" 
+                        t-esc="partner.name" 
+                        class="btn btn-link" 
+                        t-on-click="() => this.ViewPartner(partner.id)"  
+                        t-att-id="partner.id"
+                        t-ref="partner_id_{{partner.id}}"
+                    />
+
+                </t>
+    
+                <h1>Test ORM call</h1>
+                <t t-foreach="state.lines" t-as="line" t-key="line.id">
+                    <div t-esc="line.name"/>
+                </t>
+            </div>
+        </Layout>
+    </t>
+</templates>

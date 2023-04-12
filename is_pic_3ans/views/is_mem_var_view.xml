@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="is_mem_var_tree_view">
+            <field name="name">is_mem_var_tree_view</field>
+            <field name="model">is.mem.var</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="user_id"/> 
+                    <field name="login_ip"/> 
+                    <field name="name"/> 
+                    <field name="valeur"/> 
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="is_mem_var_search_view" >
+            <field name="name">is_mem_var_search_view</field>
+            <field name="model">is.mem.var</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="user_id"/> 
+                    <field name="login_ip"/> 
+                    <field name="name"/> 
+                    <field name="valeur"/> 
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="is_mem_var_action">
+            <field name="name">Variables utilisateurs</field>
+            <field name="res_model">is.mem.var</field>
+            <field name="view_mode">tree</field>
+        </record>
+    </data>
+</odoo>

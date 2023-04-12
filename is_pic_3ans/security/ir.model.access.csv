@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+is_pic_3ans.access_is_mem_var,access_is_mem_var,is_pic_3ans.model_is_mem_var,base.group_user,1,1,1,1
+

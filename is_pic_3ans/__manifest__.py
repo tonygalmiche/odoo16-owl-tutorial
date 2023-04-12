@@ -23,8 +23,10 @@
     'application': True,
     'installable': True,
     'data': [
-        'views/views.xml',
-        'views/templates.xml',
+        "security/ir.model.access.csv",
+        "views/templates.xml",
+        "views/is_mem_var_view.xml",
+        "views/menu_view.xml",
     ],
 
    'assets': {
