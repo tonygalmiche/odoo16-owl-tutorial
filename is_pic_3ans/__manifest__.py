@@ -32,6 +32,17 @@
    'assets': {
         'web.assets_backend': [
             'is_pic_3ans/static/src/**/*',
+            #'is_pic_3ans/static/lib/gantt-master/codebase/dhtmlxgantt.js',
+            #'is_pic_3ans/static/lib/gantt-master/codebase/dhtmlxgantt.css',
+            #'is_pic_3ans/static/lib/gantt-master/codebase/skins/dhtmlxgantt_broadway.css?v=8.0.1',
+            'is_pic_3ans/static/lib/gantt-master/codebase/skins/dhtmlxgantt_meadow.css',
+
+            'is_pic_3ans/static/lib/dhtmlx_gantt.css',
+
+	# <link rel="stylesheet" href="../../codebase/skins/dhtmlxgantt_broadway.css?v=8.0.1">
+
+            #'is_pic_3ans/static/lib/gantt-master/codebase/skins/dhtmlxgantt_meadow.css?v=8.0.1',
+            #'is_pic_3ans/static/src/gantt-master/codebase/skins/dhtmlxgantt_meadow.css?v=8.0.1',
         ],
     }
 }

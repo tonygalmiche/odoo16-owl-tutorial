@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.DhtmlxGanttTemplate" owl="1">
+        <style>
+        </style>
+
+
+
+
+        <!-- is_pic_3ans/static/lib/gantt-master/codebase/skins/dhtmlxgantt_broadway.css?v=8.0.1 -->
+
+	    <!-- <link rel="stylesheet" href="../../codebase/skins/dhtmlxgantt_meadow.css2?v=8.0.1"/> -->
+
+
+
+        <div id="gantt_here" style='width:100%; height:800px;'></div>
+
+        <!-- <div class="gantt_control" >
+			<input type='button' onclick="toggleOverlay()" value="Toggle Progress Line"/>
+			<input type='button' value="Zoom In" onclick="gantt.ext.zoom.zoomIn();"/>
+			<input type='button' value="Zoom Out" onclick="gantt.ext.zoom.zoomOut();"/>
+		</div>
+		<div id="gantt_here" style="width:100%; height:calc(100vh - 52px);"></div> -->
+
+
+
+        <!-- <script type="text/javascript">
+            gantt.config.xml_date = "%Y-%m-%d %H:%i";
+    
+            gantt.scales = [
+                { unit: "year", step: 1, format: "%Y" }
+            ];
+             
+            gantt.init("gantt_here");
+            gantt.parse({
+              data: [
+                {id: 1, text: "Project #1", start_date: null, duration: null, parent:0, progress: 0, open: true},
+                {id: 2, text: "Task #1", start_date: "2019-08-01 00:00", duration:5, parent:1, progress: 1},
+                {id: 3, text: "Task #2", start_date: "2019-08-06 00:00", duration:2, parent:1, progress: 0.5},
+                {id: 4, text: "Task #3", start_date: null, duration: null, parent:1, progress: 0.8, open: true},
+                {id: 5, text: "Task #3.1", start_date: "2019-08-09 00:00", duration:2, parent:4, progress: 0.2},
+                {id: 6, text: "Task #3.2", start_date: "2019-08-11 00:00", duration:1, parent:4, progress: 0}
+              ],
+              links:[
+                {id:1, source:2, target:3, type:"0"},
+                {id:2, source:3, target:4, type:"0"},
+                {id:3, source:5, target:6, type:"0"}
+              ]
+            });
+        </script> -->
+    </t>
+</templates>

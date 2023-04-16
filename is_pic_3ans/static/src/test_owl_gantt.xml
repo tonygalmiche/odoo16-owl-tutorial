@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.test_owl_gantt_template" owl="1">
+        <style>
+            .testowlgantt {
+                border-bottom: 1px solid #dee2e6;
+                padding-top: 0.5rem;
+                padding-right: 16px;
+                padding-bottom: 0.5rem;
+                padding-left: 16px;
+                background-color: #f2f3f4;
+              }
+    
+        </style>
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <div class="d-flex flex-row">
+                    <input name="input1" t-att-value="state.input1" placeholder="Nb task"    style="width:100px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <input name="input2" t-att-value="state.input2" placeholder="Durée maxi" style="width:100px" t-on-change="onChangeInput" type="text" class="form-control ms-2"/>
+                    <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OKclick"> OK </button>
+                    <button class="btn" t-on-click="OKclickAnnee">Année</button>
+                    <button class="btn" t-on-click="OKclickMois">Mois</button>
+                    <button class="btn" t-on-click="OKclickSemaine">Semaine</button>
+                    <button class="btn" t-on-click="OKclickJour">Jour</button>
+                    <button class="btn" t-on-click="OKclickMarker">Marker</button>
+                    <button class="btn" t-on-click="OKclickGoToDate">GoToDate</button>
+                </div>
+            </t>
+            <DhtmlxGantt data="state.chart_values" label="'Shirt orders by size'"/>
+        </Layout>
+    </t>
+</templates>

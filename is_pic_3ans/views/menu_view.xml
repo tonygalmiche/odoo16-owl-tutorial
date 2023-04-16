@@ -1,23 +1,43 @@
 <odoo>
     <data>
+        <menuitem name="Test OWL"    id="test_owl_menu"    sequence="0"/>
+
         <record model="ir.actions.client" id="test_owl_01_action_client">
             <field name="name">Test OWL 01</field>
             <field name="tag">is_pic_3ans.test_owl_01_registry</field>
         </record>
+        <menuitem name="Test OWL 01" id="test_owl_01_menu" parent="test_owl_menu" action="test_owl_01_action_client" sequence="10"/>
+        
         <record model="ir.actions.client" id="test_owl_02_action_client">
             <field name="name">Test OWL 02</field>
             <field name="tag">is_pic_3ans.test_owl_02_registry</field>
         </record>
+        <menuitem name="Test OWL 02" id="test_owl_02_menu" parent="test_owl_menu" action="test_owl_02_action_client" sequence="20"/>
+                
         <record model="ir.actions.client" id="pic_3ans_action_client">
             <field name="name">PIC 3 ans</field>
             <field name="tag">is_pic_3ans.pic_3ans_registry</field>
         </record>
-
-        <menuitem name="Test OWL"    id="test_owl_menu"    sequence="0"/>
-        <menuitem name="Test OWL 01" id="test_owl_01_menu" parent="test_owl_menu" action="test_owl_01_action_client" sequence="10"/>
-        <menuitem name="Test OWL 02" id="test_owl_02_menu" parent="test_owl_menu" action="test_owl_02_action_client" sequence="20"/>
         <menuitem name="PIC 3 ans"   id="pic_3ans_menu"    parent="test_owl_menu" action="pic_3ans_action_client"    sequence="30"/>
-        <menuitem name="Mem vars"    id="is_mem_var_menu"  parent="test_owl_menu" action="is_mem_var_action"         sequence="40"/>
 
+        <record model="ir.actions.client" id="test_owl_chart_action_client">
+            <field name="name">Test OWL Chart</field>
+            <field name="tag">is_pic_3ans.test_owl_chart_registry</field>
+        </record>
+        <menuitem name="Test OWL Chart" id="test_owl_chart_menu" parent="test_owl_menu" action="test_owl_chart_action_client" sequence="40"/>
+
+        <record model="ir.actions.client" id="test_owl_gantt_action_client">
+            <field name="name">Test OWL Gantt</field>
+            <field name="tag">is_pic_3ans.test_owl_gantt_registry</field>
+        </record>
+        <menuitem name="Test OWL Gantt" id="test_owl_gantt_menu" parent="test_owl_menu" action="test_owl_gantt_action_client" sequence="50"/>
+
+        <record model="ir.actions.client" id="gantt_project_action_client">
+            <field name="name">Gantt Project</field>
+            <field name="tag">is_pic_3ans.gantt_project_registry</field>
+        </record>
+        <menuitem name="Gantt Project" id="gantt_project_menu" parent="project.menu_main_pm" action="gantt_project_action_client" sequence="90"/>
+
+        <menuitem name="Mem vars"    id="is_mem_var_menu"  parent="test_owl_menu" action="is_mem_var_action"         sequence="60"/>
     </data>
 </odoo>

@@ -43,6 +43,11 @@ class AwesomeDashboard extends Component {
         };
         onWillStart(async () => {
             this.statistics = await this.rpc("/awesome_tshirt/statistics");
+
+
+            console.log(this.statistics);
+            console.log(this.statistics.orders_by_size);
+
             //this.statistics = await this.tshirtService.loadStatistics(); //2.4 Cache network calls, create a service 
 
         });

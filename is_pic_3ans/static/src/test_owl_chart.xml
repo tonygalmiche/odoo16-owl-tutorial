@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.test_owl_chart_template" owl="1">
+        <style>
+            .testowlchart {
+                border-bottom: 1px solid #dee2e6;
+                padding-top: 0.5rem;
+                padding-right: 16px;
+                padding-bottom: 0.5rem;
+                padding-left: 16px;
+                background-color: #f2f3f4;
+              }
+    
+        </style>
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <div class="d-flex flex-row">
+                    <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OKclick"> OK </button>
+                </div>
+            </t>
+            <div class="row testowlchart">
+                <h1>Test Chart OWL</h1>
+            </div>
+
+            <div class="m-3">
+                <PieChart data="state.chart_values" label="'Shirt orders by size'"/>
+            </div>
+
+
+        </Layout>
+    </t>
+</templates>
