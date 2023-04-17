@@ -3,12 +3,18 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { getDefaultConfig } from "@web/views/view";
 import { loadJS } from "@web/core/assets";
-//import { useService } from "@web/core/utils/hooks";
+import { useService } from "@web/core/utils/hooks";
 
-const { Component, useSubEnv, onWillStart, onMounted  } = owl;
+const { Component, useSubEnv, onWillStart, onMounted, useState } = owl;
 
 class GanttProject extends Component {
     setup() {
+        this.orm = useService("orm");
+        this.state = useState({
+            'input1': false,
+            'lines': [],
+        });
+
         useSubEnv({
             config: {
                 ...getDefaultConfig(),
@@ -24,21 +30,55 @@ class GanttProject extends Component {
         });
 
         onMounted(() => {
-            gantt.i18n.setLocale("fr");           // Localisation en Français
-            gantt.config.scale_height     = 45;   // Hauteur des titres
-            gantt.config.min_column_width = 20;   // Largeur mini des colonnes => Doit être petite pour pouvoir afficher complètement le Gantt
-            gantt.config.sort             = true; // Pouvoir trier le tableau des tâches en cliqaunt sur le titre des colonnes
-            gantt.config.row_height       = 25;   // Hauteur des lignes du Gantt
+            gantt.i18n.setLocale("fr");             // Localisation en Français
+            gantt.config.scale_height     = 65;     // Hauteur des titres
+            gantt.config.min_column_width = 20;     // Largeur mini des colonnes => Doit être petite pour pouvoir afficher complètement le Gantt
+            gantt.config.sort             = true;   // Pouvoir trier le tableau des tâches en cliqaunt sur le titre des colonnes
+            gantt.config.row_height       = 25;     // Hauteur des lignes du Gantt
+            gantt.config.duration_unit    = "hour"; //an hour
+
+            gantt.config.xml_date = "%Y-%m-%d %H:%i";
+
+
 
             //Configuration des titres sur 2 lignes (en mois et en jours)
             gantt.config.scales = [
                 {unit: "month", step: 1, format: "%F %Y"}, /* https://docs.dhtmlx.com/gantt/desktop__date_format.html */
-                {unit: "day"  , step: 1, format: "%d"}
+                {unit: "day"  , step: 1, format: "%d"},
+                {unit: "hour" , step: 8, format: "%H"},
             ];
             gantt.init("gantt_here");   // Initialisation du Gantt
         });
      }
 
+
+
+    async GetGanttLines(){
+        var lines = await this.orm.call("project.project", 'get_gantt_lines', []);
+        return lines
+    }
+
+     OKclick(ev) {
+        this.GetGanttLines().then(res => {
+            console.log("data =",res.data);
+            var links=[];
+
+
+
+            gantt.clearAll(); 
+            gantt.parse({
+                data : res.data, 
+                links: res.links,
+            });
+        }).catch(err => {
+            console.log("ERR",err);
+        });
+
+     }
+
+
+
+    /*
      OKclick(ev) {
         var start = new Date();
         var data=[];
@@ -62,6 +102,7 @@ class GanttProject extends Component {
             links: links,
         });
      }
+     */
 }
 
 GanttProject.components = { Layout };
