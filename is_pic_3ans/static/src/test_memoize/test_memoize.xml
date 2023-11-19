@@ -4,7 +4,9 @@
         <Layout display="display">
             <t t-set-slot="control-panel-bottom-left">
                 <div class="d-flex flex-row">
-                     <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OKclick"> OK </button>
+                    <button class="btn btn-primary ms-1" style="width:100px"  t-on-click="OKclick"> OK </button>
+                    <button class="btn btn-primary ms-1" style="width:100px"  t-on-click="Clearclick"> Clear </button>
+                    <button class="btn btn-primary ms-1" style="width:100px"  t-on-click="Refreshclick"> Refresh </button>
                 </div>
             </t>
             <div>
