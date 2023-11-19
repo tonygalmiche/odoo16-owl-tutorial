@@ -38,6 +38,15 @@
         </record>
         <menuitem name="Gantt Project" id="gantt_project_menu" parent="project.menu_main_pm" action="gantt_project_action_client" sequence="90"/>
 
-        <menuitem name="Mem vars"    id="is_mem_var_menu"  parent="test_owl_menu" action="is_mem_var_action"         sequence="60"/>
+
+        <record model="ir.actions.client" id="test_memoize_action_client">
+            <field name="name">Test Memoize</field>
+            <field name="tag">is_pic_3ans.test_memoize_registry</field>
+        </record>
+        <menuitem name="Test Memoize" id="test_memoize_menu" parent="test_owl_menu" action="test_memoize_action_client" sequence="60"/>
+
+
+
+        <menuitem name="Mem vars"    id="is_mem_var_menu"  parent="test_owl_menu" action="is_mem_var_action"         sequence="70"/>
     </data>
 </odoo>

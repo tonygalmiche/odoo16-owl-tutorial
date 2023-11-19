@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="is_pic_3ans.test_memoize_template" owl="1">
+        <Layout display="display">
+            <t t-set-slot="control-panel-bottom-left">
+                <div class="d-flex flex-row">
+                     <button class="btn btn-primary ms-1" style="width:50px"  t-on-click="OKclick"> OK </button>
+                </div>
+            </t>
+            <div>
+                <h1>Test memoize</h1>
+                <h2>Liste des partenaires</h2>
+                <t t-if="state!=false">
+                    <div>TEST 1</div>
+                    <div t-esc="state"/>
+                    <div t-esc="state.test2"/>
+                    <t t-if="state.res">
+                        <div t-esc="state.res.test"/>
+                        <div>TEST 2</div>
+                        <div t-esc="state.res.partners"/>
+                        <h2 t-if="state.res.partners">Premier partenaire : <t t-esc="state.res.partners[0].name"/></h2>
+                        <t t-foreach="state.res.partners" t-as="partner" t-key="partner.id">    
+                            <div>
+                                <a
+                                    class="btn btn-link" 
+
+                                    t-esc="partner.name" 
+                                    t-on-click="ClickPartner"  
+                                    t-att-partner_id="partner.id"
+                                />
+                            </div>
+                        </t>
+                    </t>
+                </t>
+    
+            </div>
+         </Layout>
+    </t>
+</templates>
